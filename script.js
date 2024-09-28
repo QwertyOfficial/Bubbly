@@ -1,11 +1,16 @@
 const toggleButton = document.getElementById('toggle-button');
 
-toggleButton.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
+function toggleDarkMode() {
+    document.body.classList.toggle('light-mode');
     
-    // Toggle card background color in dark mode
+    // Toggle card backgrounds based on the mode
     const cards = document.querySelectorAll('.card');
     cards.forEach(card => {
-        card.classList.toggle('dark-mode');
+        card.classList.toggle('light-mode');
     });
-});
+}
+
+// Set the default mode to dark
+document.body.classList.add('dark-mode');
+
+toggleButton.addEventListener('click', toggleDarkMode);
