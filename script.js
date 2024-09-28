@@ -13,4 +13,5 @@ function toggleDarkMode() {
 // Set the default mode to dark
 document.body.classList.add('dark-mode');
 
+// Add event listener to the toggle button
 toggleButton.addEventListener('click', toggleDarkMode);
