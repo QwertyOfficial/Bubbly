@@ -35,6 +35,36 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+.welcome h1 {
+    font-size: 4rem; /* Increased font size for "Welcome to Bubbly" */
+    margin: 0;
+}
+
+.welcome h2 {
+    margin-top: 10px;
+}
+
+.shape {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 300px; /* Adjust as needed */
+    width: 300px; /* Adjust as needed */
+    border-radius: 50%;
+    opacity: 0.3; /* Make shapes semi-transparent */
+}
+
+.left-shape {
+    background: linear-gradient(135deg, #ff5733, #ffcc00);
+    left: -150px; /* Off-screen left */
+}
+
+.right-shape {
+    background: linear-gradient(135deg, #33c4ff, #5c33ff);
+    right: -150px; /* Off-screen right */
 }
 
 .web-section {
