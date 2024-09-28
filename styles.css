@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: #333;
     background-color: #f0f0f0;
     transition: background-color 0.5s, color 0.5s;
@@ -32,26 +32,33 @@ main {
 .welcome {
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
 .web-section {
     padding: 20px;
+    width: 100%;
 }
 
 .card {
     background: #fff;
-    margin: 10px;
+    margin: 10px 0;
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: relative;
+    width: 100%;
 }
 
 .card a {
     text-decoration: none;
     color: inherit;
+}
+
+.card.dark-mode {
+    background: #444; /* Dark mode background for cards */
 }
 
 .tag {
