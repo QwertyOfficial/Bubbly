@@ -1,14 +1,14 @@
 body {
     margin: 0;
     font-family: 'Product Sans', sans-serif;
-    color: #333;
-    background-color: #f0f0f0;
+    color: #f0f0f0; /* Light text for dark mode */
+    background-color: #000; /* Pitch black background */
     transition: background-color 0.5s, color 0.5s;
 }
 
-body.dark-mode {
-    background-color: #000; /* Pitch black background */
-    color: #f0f0f0;
+body.light-mode {
+    background-color: #f0f0f0; /* Light background for light mode */
+    color: #333; /* Dark text for light mode */
 }
 
 header {
@@ -73,7 +73,7 @@ main {
 }
 
 .card {
-    background: #fff;
+    background: #444; /* Dark mode background for cards */
     margin: 10px 0;
     padding: 15px;
     border-radius: 5px;
@@ -87,8 +87,8 @@ main {
     color: inherit;
 }
 
-.card.dark-mode {
-    background: #444; /* Dark mode background for cards */
+.card.light-mode {
+    background: #fff; /* Light mode background for cards */
 }
 
 .tag {
