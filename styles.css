@@ -49,8 +49,6 @@ main {
 
 .shape {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     height: 300px; /* Adjust as needed */
     width: 300px; /* Adjust as needed */
     border-radius: 50%;
@@ -108,4 +106,29 @@ footer {
 
 footer h2 {
     margin-top: 20px;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    .shape {
+        position: fixed;
+    }
+
+    .left-shape {
+        top: 0; /* Move to the top */
+        left: 0;
+    }
+
+    .right-shape {
+        bottom: 0; /* Move to the bottom */
+        right: 0;
+    }
+
+    .welcome {
+        height: auto; /* Allow welcome section to adjust for mobile */
+    }
+
+    .welcome h1 {
+        font-size: 3rem; /* Adjust font size for mobile */
+    }
 }
