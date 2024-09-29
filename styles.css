@@ -1,64 +1,134 @@
 body {
-    font-family: 'Product Sans', sans-serif;
     margin: 0;
-    padding: 0;
-    transition: background-color 0.3s, color 0.3s;
+    font-family: 'Product Sans', sans-serif;
+    color: #f0f0f0; /* Light text for dark mode */
+    background-color: #000; /* Pitch black background */
+    transition: background-color 0.5s, color 0.5s;
 }
 
 body.light-mode {
-    background-color: #ffffff; /* Light mode background */
-    color: #000000; /* Light mode text color */
+    background-color: #f0f0f0; /* Light background for light mode */
+    color: #333; /* Dark text for light mode */
 }
 
-body.dark-mode {
-    background-color: #000000; /* Dark mode background */
-    color: #ffffff; /* Dark mode text color */
+header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+button {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.welcome {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.welcome h1 {
+    font-size: 4rem; /* Increased font size for "Welcome to Bubbly" */
+    margin: 0;
+}
+
+.welcome h2 {
+    margin-top: 10px;
 }
 
 .shape {
     position: absolute;
-    height: 100px; /* Adjust height as needed */
-    width: 200px; /* Adjust width as needed */
+    height: 300px; /* Adjust as needed */
+    width: 300px; /* Adjust as needed */
     border-radius: 50%;
-    opacity: 0.5;
+    opacity: 0.3; /* Make shapes semi-transparent */
 }
 
 .left-shape {
-    background-color: red; /* Change to desired color */
-    left: -100px; /* Off-screen on the left */
-    top: 50%;
-    transform: translateY(-50%);
+    background: linear-gradient(135deg, #ff5733, #ffcc00);
+    left: -150px; /* Off-screen left */
 }
 
 .right-shape {
-    background-color: blue; /* Change to desired color */
-    right: -100px; /* Off-screen on the right */
-    top: 50%;
-    transform: translateY(-50%);
+    background: linear-gradient(135deg, #33c4ff, #5c33ff);
+    right: -150px; /* Off-screen right */
+}
+
+.web-section {
+    padding: 20px;
+    width: 100%;
 }
 
 .card {
-    background-color: white; /* Card background */
-    border: 1px solid #ccc; /* Card border */
-    border-radius: 5px; /* Card border radius */
+    background: #444; /* Dark mode background for cards */
     margin: 10px 0;
     padding: 15px;
-    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 100%;
 }
 
 .card a {
     text-decoration: none;
-    color: inherit; /* Inherit text color from parent */
+    color: inherit;
 }
 
-.card a:hover {
-    text-decoration: underline; /* Underline on hover */
+.card.light-mode {
+    background: #fff; /* Light mode background for cards */
 }
 
 .tag {
-    background-color: red;
+    background: red;
     color: white;
-    padding: 3px 5px;
+    padding: 2px 5px;
     border-radius: 3px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
     font-size: 12px;
+}
+
+footer {
+    padding: 20px;
+}
+
+footer h2 {
+    margin-top: 20px;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    .shape {
+        position: fixed;
+    }
+
+    .left-shape {
+        top: 0; /* Move to the top */
+        left: 0;
+    }
+
+    .right-shape {
+        bottom: 0; /* Move to the bottom */
+        right: 0;
+    }
+
+    .welcome {
+        height: auto; /* Allow welcome section to adjust for mobile */
+    }
+
+    .welcome h1 {
+        font-size: 3rem; /* Adjust font size for mobile */
+    }
 }
