@@ -1,39 +1,38 @@
-const toggleButton = document.getElementById('toggle-button');
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.getElementById('toggle-button');
+    const body = document.body;
 
-function toggleDarkMode() {
-    document.body.classList.toggle('light-mode');
-    
-    // Toggle card backgrounds based on the mode
-    const cards = document.querySelectorAll('.card');
-    cards.forEach(card => {
-        card.classList.toggle('light-mode');
-    });
-}
-
-// Set the default mode to dark
-document.body.classList.add('dark-mode');
-
-// Function to detect mobile devices
-function isMobileDevice() {
-    return /Mobi|Android/i.test(navigator.userAgent);
-}
-
-// Move shapes based on device type
-function adjustShapes() {
-    if (isMobileDevice()) {
-        const leftShape = document.querySelector('.left-shape');
-        const rightShape = document.querySelector('.right-shape');
-        leftShape.style.position = 'fixed';
-        leftShape.style.top = '0';
-        leftShape.style.left = '0';
-        rightShape.style.position = 'fixed';
-        rightShape.style.bottom = '0';
-        rightShape.style.right = '0';
+    // Function to apply the correct mode based on system preferences
+    function applyPreferredMode() {
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            body.classList.add('dark-mode');
+        } else {
+            body.classList.add('light-mode');
+        }
     }
-}
 
-// Add event listener to the toggle button
-toggleButton.addEventListener('click', toggleDarkMode);
+    // Apply the preferred mode on initial load
+    applyPreferredMode();
 
-// Call function to adjust shapes on load
-adjustShapes();
+    // Add event listener to toggle button
+    toggleButton.addEventListener('click', () => {
+        if (body.classList.contains('dark-mode')) {
+            body.classList.remove('dark-mode');
+            body.classList.add('light-mode');
+        } else {
+            body.classList.remove('light-mode');
+            body.classList.add('dark-mode');
+        }
+    });
+
+    // Optional: Listen for changes in color scheme preference
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (e.matches) {
+            body.classList.remove('light-mode');
+            body.classList.add('dark-mode');
+        } else {
+            body.classList.remove('dark-mode');
+            body.classList.add('light-mode');
+        }
+    });
+});
